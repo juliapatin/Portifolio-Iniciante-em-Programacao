@@ -1,0 +1,54 @@
+<canvas width="600" height="400"></canvas>
+<br>
+Escolha uma cor <input type="color">
+
+<script>
+
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+    var cor = document.querySelector("input");
+    console.log(cor);
+3
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+    
+    // essa variável que será utilizada pela função desenhaCirculo para saber se ela deve ou não desenhar
+    var desenha = false;
+
+    function desenhaCirculo(evento) {
+
+    /*evento.pageX sendo onde foi clicado na tela e o tela
+    offset sendo para tirar as partes q nao sao 
+    o nosso canvas*/
+            if (desenha == true){
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+            
+            pincel.fillStyle = cor.value;
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0 , 2 * 3.14);
+            pincel.fill();
+            //console.log(x +", " + y);
+            } 
+    }
+    
+    /*A primeira atribui true para a variável desenha e
+     a segunda atribui false. Como a função desenhaCirculo 
+     depende da variável que foi alterada, conseguimos o 
+     resultado esperado*/
+    function habilitaDesenhar() {
+
+    desenha = true;
+    }
+
+    function desabilitaDesenhar() {
+
+    desenha = false;
+    }
+    
+    tela.onmousemove = desenhaCirculo;
+
+    tela.onmousedown = habilitaDesenhar;
+
+    tela.onmouseup = desabilitaDesenhar;
+</script>

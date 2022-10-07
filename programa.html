@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<script>
+	
+	var ano = 2022;
+
+	document.write("A idade de Júlia é ");
+	document.write(ano - 2001);
+
+	document.write("<br>");
+	document.write("<br>");
+
+	//document.write("Flávio nasceu em " + (ano - 1977) + " anos");
+	//document.write("Joaquim nasceu em " + (ano - 1996) + " anos");
+	//document.write("Barney nasceu em " + (ano - 1976) + " anos");
+
+</script>
+
+<script>
+	function pulaLinha() {
+
+		document.write("<br>");
+		document.write("<br>");
+	}
+
+	function mostra(frase) {
+
+		document.write(frase);
+		pulaLinha();
+	}
+
+	var ano = 2016;
+	
+	mostra("Flávio nasceu em " + (ano - 1977) + " anos");
+
+	mostra("Joaquim nasceu em " + (ano - 1996) + " anos");
+
+	ano = 2017;
+
+	mostra("Barney nasceu em " + (ano - 1976) + " anos");
+	
+	
+</script>

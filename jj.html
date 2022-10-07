@@ -1,0 +1,38 @@
+<meta charset="UTF-8">
+
+<h1>Receitas do Yan</h1>
+
+<script>
+    //abrimos um array
+    var ingredientes = [];
+    //vamos ver quantos elementos tem dentro do array em numero
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+    //tem q ter pelo menos 1 ingrediente
+    var contador = 1;
+    //enquanto o contador for menor ou igual a quantidade de ingredientes repetir o loop.
+    while( contador <= quantidade) {
+        //aqui inicia o loop com o elemento
+        var ingrediente = prompt("Informe o ingrediente " + contador);
+        //e aqui marca o elemento
+        var existe = false;
+        //repetir inicio da variavel; enquanto posicao for menor q ingrediente repetir o loop
+        //; e para q posicao aumente com os loops vem posicao++
+        for( var posicao = 0; posicao < ingredientes.length; posicao++) {
+            //se ingrediente[numero da posicao] for igual a ingrediente
+            //existe sera true e o loop para e começa de novo
+            if( ingredientes[posicao] == ingrediente) {
+
+                existe = true;
+                break;
+            }
+        }
+        //se existe ainda for false
+        if( existe == false) {
+            //por o ingrediente no array e aumentar o contador
+            ingredientes.push(ingrediente);
+            contador++;
+        }
+    }
+
+    console.log(ingredientes);
+</script>

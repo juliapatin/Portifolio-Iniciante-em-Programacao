@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+    
+    //sempre cuidar esse <=, tem q por o = senao ele vai parar antes do 1000.
+    for(var linha = 1; linha <= 1000; linha++){
+    
+        for(var coluna = 1; coluna <= 100; coluna++){    
+        document.write("*");
+        }
+        pulaLinha();
+    }
+</script>

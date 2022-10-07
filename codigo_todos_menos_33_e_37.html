@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var contador = 30;
+    var limitador = 40;    
+
+    while(contador <= limitador) {
+//se o contador for igual a 33 mudar a variavel para contador recebe contador mais 1
+        if(contador == 33) {
+            contador = contador + 1;
+//se o contador for igual a 37 mudar a variavel para contador recebe contador mais 1
+        } else if(contador == 37) {
+            contador = contador + 1;
+//senao mostrar o texto pedido e no final adicionar + 1 ao contador até o limitador.
+        } else {
+        mostra(contador);
+        contador = contador + 1;
+        }
+    }
+
+    mostra("FIM.");
+
+</script>

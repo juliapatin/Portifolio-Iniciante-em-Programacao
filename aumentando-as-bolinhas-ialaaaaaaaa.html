@@ -1,0 +1,32 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector("canvas");
+    var pincel = tela.getContext("2d");
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+    
+    var tamanho = 10;
+    function desenhaCirculo(evento) {
+/*evento.pageX sendo onde foi clicado na tela e o tela
+offset sendo para tirar as partes q nao sao 
+o nosso canvas*/
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x, y, tamanho, 0 , 2 * 3.14);
+        pincel.fill();
+        if(evento.shiftKey == true && tamanho < 40) {
+            tamanho = tamanho + 20;
+        } 
+        if (evento.altKey == true && tamanho > 10) {
+            tamanho = tamanho - 5;
+        }
+        console.log(x +", " + y);
+    }
+
+    tela.onclick = desenhaCirculo;
+</script>
